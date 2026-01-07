@@ -36,26 +36,26 @@ export default function Home() {
 					transition={{ duration: 0.8 }}
 					className="text-center max-w-3xl mx-auto space-y-6"
 				>
-					<h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 flex justify-center items-center gap-3">
-						Just
-						<span className="relative inline-flex flex-col h-[1.2em] overflow-hidden items-center justify-start">
+					<h1 className="text-4xl md:text-6xl font-bold flex justify-center items-center gap-3">
+						<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">Just</span>
+						<span className="relative inline-flex flex-col h-[1.2em] w-[3em] overflow-hidden">
 							<motion.span
 								animate={{ y: ["0%", "-100%", "0%"] }}
 								transition={{ repeat: Infinity, duration: 4, times: [0, 0.5, 1], ease: "easeInOut" }}
-								className="block"
+								className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"
 							>
 								Share
 							</motion.span>
 							<motion.span
-								className="absolute top-full block"
-								animate={{ y: ["0%", "-100%", "0%"] }}
+								className="absolute top-0 left-0 block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"
+								animate={{ y: ["100%", "0%", "100%"] }}
 								transition={{ repeat: Infinity, duration: 4, times: [0, 0.5, 1], ease: "easeInOut" }}
 								aria-hidden="true"
 							>
 								Say
 							</motion.span>
 						</span>
-						It.
+						<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">It.</span>
 					</h1>
 					<p className="text-xl md:text-2xl text-muted-foreground">
 						A safe, anonymous space to share your thoughts, track your mood, and find support.
