@@ -1,14 +1,12 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-
-interface User {
-	id: string
-	name: string
-	joinedAt: string
-}
+import type { User } from '@/types'
 
 interface AuthContextType {
 	user: User | null
 	isLoading: boolean
+	login: (username: string, password: string) => Promise<void>
+	signup: (username: string, password: string, email?: string) => Promise<void>
+	logout: () => void
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
@@ -20,22 +18,61 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 	useEffect(() => {
 		const storedUser = localStorage.getItem('jsi_user')
 		if (storedUser) {
-			setUser(JSON.parse(storedUser))
-		} else {
-			// Create anonymous user
-			const newUser: User = {
-				id: crypto.randomUUID(),
-				name: `Anonymous ${Math.floor(Math.random() * 1000)}`,
-				joinedAt: new Date().toISOString(),
+			try {
+				setUser(JSON.parse(storedUser))
+			} catch (error) {
+				console.error("Failed to parse stored user", error)
+				localStorage.removeItem('jsi_user')
 			}
-			localStorage.setItem('jsi_user', JSON.stringify(newUser))
-			setUser(newUser)
 		}
 		setIsLoading(false)
 	}, [])
 
+	const login = async (username: string) => {
+		// Mock login
+		return new Promise<void>((resolve) => {
+			setTimeout(() => {
+				const loggedInUser: User = {
+					id: 'mock-user-id-123',
+					username: username,
+					displayName: username,
+					email: username.includes('@') ? username : undefined,
+					joinedAt: new Date().toISOString(),
+					iconSeed: String(Math.random())
+				}
+				setUser(loggedInUser)
+				localStorage.setItem('jsi_user', JSON.stringify(loggedInUser))
+				resolve()
+			}, 800)
+		})
+	}
+
+	const signup = async (username: string, _: string, email?: string) => {
+		// Mock signup
+		return new Promise<void>((resolve) => {
+			setTimeout(() => {
+				const newUser: User = {
+					id: crypto.randomUUID(),
+					username: username,
+					displayName: username,
+					email: email,
+					joinedAt: new Date().toISOString(),
+					iconSeed: String(Math.random())
+				}
+				setUser(newUser)
+				localStorage.setItem('jsi_user', JSON.stringify(newUser))
+				resolve()
+			}, 800)
+		})
+	}
+
+	const logout = () => {
+		setUser(null)
+		localStorage.removeItem('jsi_user')
+	}
+
 	return (
-		<AuthContext.Provider value={{ user, isLoading }}>
+		<AuthContext.Provider value={{ user, isLoading, login, signup, logout }}>
 			{children}
 		</AuthContext.Provider>
 	)

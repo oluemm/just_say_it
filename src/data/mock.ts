@@ -6,40 +6,50 @@ export const FORUMS = [
     title: 'Anxiety Support',
     description: 'Share your struggles and strategies for managing anxiety. You are not alone.',
     icon: Brain,
-    color: 'text-blue-500',
-    bg: 'bg-blue-500/10'
+    color: 'text-purple-600',
+    bg: 'bg-purple-100 dark:bg-purple-900/20',
+    memberCount: '12.5k',
+    activeNow: true
   },
   {
     id: '2',
     title: 'Depression Compass',
     description: 'A safe harbor during the storm. Navigating the lows together.',
     icon: CloudRain,
-    color: 'text-indigo-500',
-    bg: 'bg-indigo-500/10'
+    color: 'text-blue-500',
+    bg: 'bg-blue-100 dark:bg-blue-900/20',
+    memberCount: '9.8k',
+    activeNow: true
   },
   {
     id: '3',
     title: 'Daily Wins',
     description: 'Celebrate your small victories. Taking a shower, getting out of bed - it all counts.',
     icon: Trophy,
-    color: 'text-yellow-500',
-    bg: 'bg-yellow-500/10'
+    color: 'text-amber-500',
+    bg: 'bg-amber-100 dark:bg-amber-900/20',
+    memberCount: '5.2k',
+    activeNow: true
   },
   {
     id: '4',
+    title: 'Relationships',
+    description: 'Navigating friends, family, broken hearts, and romantic relationships.',
+    icon: Heart,
+    color: 'text-rose-500',
+    bg: 'bg-rose-100 dark:bg-rose-900/20',
+    memberCount: '8.1k',
+    activeNow: true
+  },
+  {
+    id: '5',
     title: 'Casual Chat',
     description: 'Talk about hobbies, movies, pets, or anything else to take your mind off things.',
     icon: Coffee,
     color: 'text-emerald-500',
-    bg: 'bg-emerald-500/10'
-  },
-  {
-    id: '5',
-    title: 'Relationships',
-    description: 'Navigating friends, family, and romantic relationships.',
-    icon: Heart,
-    color: 'text-rose-500',
-    bg: 'bg-rose-500/10'
+    bg: 'bg-emerald-100 dark:bg-emerald-900/20',
+    memberCount: '3.4k',
+    activeNow: false
   },
   {
     id: '6',
@@ -47,7 +57,9 @@ export const FORUMS = [
     description: 'Quotes, stories, and reminders that things can get better.',
     icon: Sun,
     color: 'text-orange-500',
-    bg: 'bg-orange-500/10'
+    bg: 'bg-orange-100 dark:bg-orange-900/20',
+    memberCount: '4.5k',
+    activeNow: true
   },
 ]
 

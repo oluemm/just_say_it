@@ -1,45 +1,154 @@
 @import "tailwindcss";
 
 @theme {
-	--color-background: 0 0% 100%;
-	--color-foreground: 222.2 84% 4.9%;
-	--color-card: 0 0% 100%;
-	--color-card-foreground: 222.2 84% 4.9%;
-	--color-popover: 0 0% 100%;
-	--color-popover-foreground: 222.2 84% 4.9%;
-	--color-primary: 221.2 83.2% 53.3%;
-	--color-primary-foreground: 210 40% 98%;
-	--color-secondary: 210 40% 96.1%;
-	--color-secondary-foreground: 222.2 47.4% 11.2%;
-	--color-muted: 210 40% 96.1%;
-	--color-muted-foreground: 215.4 16.3% 46.9%;
-	--color-accent: 210 40% 96.1%;
-	--color-accent-foreground: 222.2 47.4% 11.2%;
-	--color-destructive: 0 84.2% 60.2%;
-	--color-destructive-foreground: 210 40% 98%;
-	--color-border: 214.3 31.8% 91.4%;
-	--color-input: 214.3 31.8% 91.4%;
-	--color-ring: 221.2 83.2% 53.3%;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+}
+
+/* 
+ * JSI Mental Health App - Calming Color Theme
+ * Design Philosophy: Serene, trustworthy, and healing
+ */
+
+:root {
+  /* warm off-white */
+  --background: hsl(30 20% 98%);
+  /* warm dark gray */
+  --foreground: hsl(25 15% 20%);
+
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(25 15% 20%);
+
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(25 15% 20%);
+
+  /* Teal primary */
+  --primary: hsl(172 66% 50%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  /* Lavender secondary */
+  --secondary: hsl(258 90% 66%);
+  --secondary-foreground: hsl(0 0% 100%);
+
+  /* Sage muted */
+  --muted: hsl(142 50% 96%);
+  --muted-foreground: hsl(25 10% 45%);
+
+  /* Soft blue accent */
+  --accent: hsl(213 92% 68%);
+  --accent-foreground: hsl(0 0% 100%);
+
+  /* Softer red */
+  --destructive: hsl(0 70% 50%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  --border: hsl(30 15% 88%);
+  --input: hsl(30 15% 88%);
+  --ring: hsl(172 66% 50%);
+
+  --radius: 0.5rem;
+
+  /* Custom Status Colors */
+  --success: hsl(142 71% 45%);
+  --success-foreground: hsl(0 0% 100%);
+  
+  --warning: hsl(38 92% 50%);
+  --warning-foreground: hsl(0 0% 100%);
 }
 
 .dark {
-	--color-background: 222.2 84% 4.9%;
-	--color-foreground: 210 40% 98%;
-	--color-card: 222.2 84% 4.9%;
-	--color-card-foreground: 210 40% 98%;
-	--color-popover: 222.2 84% 4.9%;
-	--color-popover-foreground: 210 40% 98%;
-	--color-primary: 217.2 91.2% 59.8%;
-	--color-primary-foreground: 222.2 47.4% 11.2%;
-	--color-secondary: 217.2 32.6% 17.5%;
-	--color-secondary-foreground: 210 40% 98%;
-	--color-muted: 217.2 32.6% 17.5%;
-	--color-muted-foreground: 215 20.2% 65.1%;
-	--color-accent: 217.2 32.6% 17.5%;
-	--color-accent-foreground: 210 40% 98%;
-	--color-destructive: 0 62.8% 30.6%;
-	--color-destructive-foreground: 210 40% 98%;
-	--color-border: 217.2 32.6% 17.5%;
-	--color-input: 217.2 32.6% 17.5%;
-	--color-ring: 224.3 76.3% 48%;
+  /* Deep blue-gray */
+  --background: hsl(220 18% 12%);
+  --foreground: hsl(30 15% 92%);
+
+  --card: hsl(220 18% 16%);
+  --card-foreground: hsl(30 15% 92%);
+
+  --popover: hsl(220 18% 16%);
+  --popover-foreground: hsl(30 15% 92%);
+
+  /* Softer teal for dark mode */
+  --primary: hsl(172 66% 55%);
+  --primary-foreground: hsl(220 18% 12%);
+
+  /* Lighter lavender */
+  --secondary: hsl(258 70% 70%);
+  --secondary-foreground: hsl(220 18% 12%);
+
+  --muted: hsl(220 18% 20%);
+  --muted-foreground: hsl(30 10% 65%);
+
+  --accent: hsl(213 85% 65%);
+  --accent-foreground: hsl(220 18% 12%);
+
+  --destructive: hsl(0 65% 55%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  --border: hsl(220 18% 24%);
+  --input: hsl(220 18% 24%);
+  --ring: hsl(172 66% 55%);
+  
+  --success: hsl(142 65% 50%);
+  --success-foreground: hsl(0 0% 100%);
+  
+  --warning: hsl(38 90% 55%);
+  --warning-foreground: hsl(0 0% 100%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.6;
+  }
+  
+  /* Reset for interactive elements */
+  button, [role="button"] {
+    cursor: pointer;
+  }
+}
+
+/* Transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }

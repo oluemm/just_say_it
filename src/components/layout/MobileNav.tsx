@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { NAV_ITEMS } from './nav-items'
 import { cn } from '@/lib/utils'
-import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 export function MobileNav() {
 	const location = useLocation()
@@ -9,7 +8,7 @@ export function MobileNav() {
 	return (
 		<div className="fixed bottom-0 left-0 right-0 border-t bg-background md:hidden z-50">
 			<nav className="flex justify-around items-center p-2">
-				{NAV_ITEMS.slice(0, 4).map((item) => {
+				{NAV_ITEMS.map((item) => {
 					const Icon = item.icon
 					return (
 						<Link
@@ -27,9 +26,6 @@ export function MobileNav() {
 						</Link>
 					)
 				})}
-				<div className="flex flex-col items-center gap-1 rounded-lg px-3 py-2">
-					<ThemeToggle />
-				</div>
 			</nav>
 		</div>
 	)
